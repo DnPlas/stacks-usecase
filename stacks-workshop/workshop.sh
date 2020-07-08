@@ -31,6 +31,8 @@ git clone https://github.com/opencv/gst-video-analytics \
   && git checkout v0.7 \
   && git submodule init \
   && git submodule update \
+  && sed '$d' samples/shell/face_detection_and_classification.sh \
+  && echo 'gvawatermark ! videoconvert ! x264enc ! mp4mux ! filesink location=xyz.mp4' >> samples/shell/face_detection_and_classification.sh \
   && cd ..
 
 git clone https://github.com/opencv/open_model_zoo.git \
@@ -47,6 +49,10 @@ docker pull clearlinux/stacks-dars-openblas
 
 # ---- DOCKER CHECK ----
 echo '---------- DOCKER NETWORK CHECK ----------'
-if [[ -e 
+if ! [[ -e /etc/systemd/system/docker.service.d/ ]]; then
+  echo '[WARNING] You might be missing a Docker proxy configuration file. Please check it.'
+else
+  echo '[OK] Proxy settings for Docker'
+fi
 docker_network
 echo '---------- DOCKER NETWORK CHECK DONE ----------'
