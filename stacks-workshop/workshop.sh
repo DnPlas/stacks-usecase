@@ -31,7 +31,7 @@ git clone https://github.com/opencv/gst-video-analytics \
   && git checkout v0.7 \
   && git submodule init \
   && git submodule update \
-  && sed '$d' samples/shell/face_detection_and_classification.sh \
+  && sed -i '$d' samples/shell/face_detection_and_classification.sh \
   && echo 'gvawatermark ! videoconvert ! x264enc ! mp4mux ! filesink location=xyz.mp4' >> samples/shell/face_detection_and_classification.sh \
   && cd ..
 
