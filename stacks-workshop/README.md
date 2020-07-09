@@ -28,7 +28,7 @@ We have created a script for setting up your environment and fetching all resour
 If you haven't already, please go ahead and clone this repository in a known path.
 
 ```bash
-git clone https://github.com/DnPlas/stacks-usecase.git --branch dplascen/stacks-workshop
+git clone https://github.com/DnPlas/stacks-usecase.git --branch dplascen/workshop-content
 ```
 
 Once the `stacks-usecase` is cloned, please run the `workshop.sh` script. Please note this script should be run from within `stacks-usecase/stacks-workshop` to work properly.
