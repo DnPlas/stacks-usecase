@@ -22,7 +22,7 @@ export SWS_WORKSHOP='/home/myuser/stacks-usecase/stacks-workshop/'
 1. Download pre-trained models from [Open Model Zoo](https://github.com/opencv/open_model_zoo.git)
 
 ```bash
-cd $SWS_WORKSHOP/lab-3/stacks-open_model_zoo/tools/downloader
+cd $SWS_WORKSHOP/lab-3/gva/open_model_zoo/tools/downloader
 
 python3 downloader.py --list $SWS_WORKSHOP/lab-3/gva/gst-video-analytics/samples/model_downloader_configs/intel_models_for_samples.LST -o $SWS_WORKSHOP/lab-3/gva/data/models/intel
 ```

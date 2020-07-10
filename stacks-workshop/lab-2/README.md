@@ -13,6 +13,12 @@ export TYPE=oss
 export REGISTRY=stacks-workshop
 ```
 
+>NOTE: Before running the commands below, you should set `SWS_WORKSHOP` variable to the path where the `stacks-usecase` repository lives. For example:
+
+```bash
+export SWS_WORKSHOP='/home/myuser/stacks-usecase/'
+```
+
 ### Run a make
 
 Behind the scenes, this is running a docker build, building the docker images we pulled so that we can run them as containers.
@@ -36,7 +42,7 @@ Let’s test our model by having it predict some digits.
 
 In another terminal, 
 
-* cd into the repo again, stacks-workshop/lab-2.
+* cd into the repo again, $SWS_WORKSHOP/handwritten_digit_recog.
 
 * Setup the TYPE and REGISTRY environment variables again.
 
@@ -44,11 +50,10 @@ In another terminal,
 
 ```bash
 ### IN A NEW TERMINAL
-cd ~/stacks-workshop/lab-2
+cd $SWS_WORKSHOP/handwritten_digit_recog
 export TYPE=oss
 export REGISTRY=stacks-workshop
 docker run -p 5059:5059 -it -v ${PWD}/models:/workdir/models $REGISTRY/dlrs-serve-$TYPE:latest "-s serve"
-curl -i -X POST -d 'Classify' http://localhost:5059/digit_recognition/classify
 ```
 
 ### Test
